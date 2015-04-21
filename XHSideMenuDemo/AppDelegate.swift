@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  XHSideMenuDemo
+//  XHSideMenu
 //
 //  Created by Sunny on 15/4/21.
 //  Copyright (c) 2015年 sunny. All rights reserved.
@@ -13,9 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let center                                   = XHCenterController()
+        let sideMenu                                 = XHMenuController()
+        sideMenu.centerViewController                = center
+        let containerViewController                  = XHContainerController(sideMenu: sideMenu, center: UINavigationController(rootViewController: center))
+        containerViewController.view.backgroundColor = UIColor.greenColor()
+
+        window                                       = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.rootViewController                   = containerViewController
+        window!.backgroundColor                      = UIColor.whiteColor()
+        window!.makeKeyAndVisible()
         return true
     }
 
