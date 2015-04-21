@@ -33,12 +33,11 @@ class XHMenuButton: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        var drawColor = UIColor.whiteColor() //默认颜色
+        var drawColor = UIColor.whiteColor() //default
         if let color = menuColor {
             drawColor = color
         }
         
-        //绘制汉堡按钮
         let path = UIBezierPath()
         path.moveToPoint(CGPoint(x: 0, y: 2))
         path.addLineToPoint(CGPoint(x: kMenuButtonWidth, y: 2))
@@ -59,6 +58,5 @@ class XHMenuButton: UIView {
         path2.lineWidth = 1.5
         drawColor.set()
         path2.stroke()
-
     }
 }

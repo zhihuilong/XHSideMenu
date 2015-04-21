@@ -47,7 +47,7 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
             centerViewController.didMoveToParentViewController(self)
             
             menuViewController.view.frame = CGRect(x: 0, y: 0, width: XHMenuWidth, height: view.frame.height)
-            updateShadow(true) //显示阴影
+            updateShadow(true) //show shadow
             
         case .parallel:fallthrough
         case .parallax:fallthrough
@@ -112,7 +112,7 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
             menuViewController.view.frame.origin.x = XHMenuWidth * (percent - 1.0)
             
         case .cover:
-            println("百分比\(percent)")
+            println("percent--\(percent)")
             //设置menuVC的offsetX为负百分比
             menuViewController.view.frame.origin.x = XHMenuWidth * (percent - 1.0)
         case .under:
