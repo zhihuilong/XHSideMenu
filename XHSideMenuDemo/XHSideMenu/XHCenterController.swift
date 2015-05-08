@@ -54,7 +54,7 @@ class XHCenterController: UIViewController,UINavigationControllerDelegate{
     :param: index which controller
     */
     func selectViewController(index:Int) {
-        let newVC = childViewControllers[index] as UIViewController
+        let newVC = childViewControllers[index] as! UIViewController
         if newVC == selectedVC {
             return
         }

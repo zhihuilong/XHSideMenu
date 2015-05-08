@@ -15,9 +15,9 @@ class XHMenuHeader: UIView {
     private let imageView:UIImageView = UIImageView()
     private let nickLabel:UILabel = UILabel()
     
-    override init() {
-        super.init()
-    }
+//    override init() {
+//        super.init()
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -23,9 +23,9 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
     }
 
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target:self, action:Selector("handleGesture:"))
@@ -35,7 +35,7 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     private func setupMenu() {
-        let menu = menuViewController as XHMenuController
+        let menu = menuViewController as! XHMenuController
         switch menu.style {
         case .under:
             addChildViewController(menuViewController)
@@ -103,7 +103,7 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
     
     private func setToPercent(percent: CGFloat) {
         
-        let menu = menuViewController as XHMenuController
+        let menu = menuViewController as! XHMenuController
         switch menu.style {
         case .parallel:
             //设置centerVC的offsetX为正百分比
