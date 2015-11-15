@@ -8,23 +8,19 @@
 
 import UIKit
 
-let menuAvatarWidth:CGFloat = 60
+let menuAvatarWidth: CGFloat = 60
 
 class XHMenuHeader: UIView {
-    var tapHandler:(()->())?
-    private let imageView:UIImageView = UIImageView()
-    private let nickLabel:UILabel = UILabel()
-    
-//    override init() {
-//        super.init()
-//    }
+    var tapHandler: (()->())?
+    private let imageView = UIImageView()
+    private let nickLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -51,7 +47,7 @@ class XHMenuHeader: UIView {
         if let tap = tapHandler {
             tap()
         } else {
-            println("you need assign the tapHandler！！！")
+            print("you need assign the tapHandler！！！")
         }
     }
 }

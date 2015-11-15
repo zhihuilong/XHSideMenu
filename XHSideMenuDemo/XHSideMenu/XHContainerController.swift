@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
+class XHContainerController: UIViewController {
     
     private let menuViewController: UIViewController!
     private var centerViewController: UIViewController!
@@ -22,7 +22,7 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -61,7 +61,6 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
             menuViewController.didMoveToParentViewController(self)
             
             menuViewController.view.frame = CGRect(x: -XHMenuWidth, y: 0, width: XHMenuWidth, height: view.frame.height)
-        default: break
         }
     }
     
@@ -71,7 +70,7 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
         
         //计算进度:(isOpening ? 1.0 : -1.0)保证为正数
         var progress = translation.x / XHMenuWidth * (isOpening ? 1.0 : -1.0)
-       
+        
         //保证在0~1之间
         progress = min(max(progress,0.0), 1.0)
         
@@ -112,7 +111,7 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
             menuViewController.view.frame.origin.x = XHMenuWidth * (percent - 1.0)
             
         case .cover:
-            println("percent--\(percent)")
+            print("percent--\(percent)")
             //设置menuVC的offsetX为负百分比
             menuViewController.view.frame.origin.x = XHMenuWidth * (percent - 1.0)
         case .under:
@@ -161,7 +160,12 @@ class XHContainerController: UIViewController,UIGestureRecognizerDelegate {
         }
     }
     
-    //delegate搞定二级页面不允许拖拽
+}
+
+//MARK: - UIGestureRecognizerDelegate
+extension XHContainerController: UIGestureRecognizerDelegate {
+    
+    //搞定二级页面不允许拖拽
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         return allowDrag
     }

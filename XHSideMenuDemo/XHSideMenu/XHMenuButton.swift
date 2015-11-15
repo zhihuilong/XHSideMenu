@@ -8,11 +8,11 @@
 
 import UIKit
 
-let kMenuButtonWidth:CGFloat = 20
+private let kMenuButtonWidth: CGFloat = 20
 
 class XHMenuButton: UIView {
-    var tapHandler:(()->())?
-    var menuColor:UIColor? {
+    var tapHandler: (()->())?
+    var menuColor: UIColor? {
         didSet{
             setNeedsDisplay()
         }
@@ -28,7 +28,7 @@ class XHMenuButton: UIView {
         if let tap = tapHandler {
             tap()
         } else {
-            println("you need assign the tapHandler！！！")
+            print("you need assign the tapHandler！！！")
         }
     }
     

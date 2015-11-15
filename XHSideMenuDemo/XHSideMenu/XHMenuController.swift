@@ -17,8 +17,8 @@ enum SideMenuStyle : Int {
 
 class XHMenuController: UITableViewController {
     
-    var centerViewController:XHCenterController!
-    var style:SideMenuStyle = SideMenuStyle.under  //default
+    var centerViewController: XHCenterController!
+    var style = SideMenuStyle.under  //default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class XHMenuController: UITableViewController {
     override func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "MenuCell"
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
         }
