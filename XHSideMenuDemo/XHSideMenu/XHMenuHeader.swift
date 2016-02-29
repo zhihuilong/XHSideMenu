@@ -39,7 +39,7 @@ class XHMenuHeader: UIView {
         
         let nickOrigin = CGPoint(x: imageOrigin.x+menuAvatarWidth+XHMargin,y: imageOrigin.y)
         nickLabel.frame = CGRect(origin: nickOrigin, size: CGSize(width: XHViewWidth - nickOrigin.x,height: menuAvatarWidth))
-        nickLabel.text = "Sunny"
+        nickLabel.text = "Little Sunny"
         nickLabel.textColor = XHNavTintColor
     }
     

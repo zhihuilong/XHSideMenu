@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let center                                   = XHCenterController()
         let sideMenu                                 = XHMenuController()
+        sideMenu.style                               = SideMenuStyle.cover // custom the style of sideMenu
         sideMenu.centerViewController                = center
         let containerViewController                  = XHContainerController(sideMenu: sideMenu, center: UINavigationController(rootViewController: center))
         containerViewController.view.backgroundColor = UIColor.greenColor()
